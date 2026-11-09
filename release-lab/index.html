@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Командалық жоба – v1.0.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#basty">Жоба</a>
+  <nav><a href="#komanda">Қатысушылар</a><a href="#nuskalar">Нұсқалар</a><a href="#pipeline">CI/CD</a></nav>
+</header>
+
+<main>
+<section id="basty" class="hero">
+  <div class="hero-text">
+    <h1>Бағдарламалық өнімнің алғашқы тұрақты нұсқасы</h1>
+    <p>Тегтер мен релиздерді басқаруды үйреніп, жобаны ресми түрде жариялаған командалық зертханалық жұмыс.</p>
+    <a class="btn" href="#nuskalar">Өзгерістер тізімін көру</a>
+  </div>
+  <div class="tag" aria-label="Ағымдағы нұсқа v1.0.0">
+    <span class="hole"></span>
+    <small>Ағымдағы нұсқа</small>
+    <strong>v1.0.0</strong>
+    <svg viewBox="0 0 220 60" aria-hidden="true">
+      <path d="M10 30 H210" stroke="currentColor" stroke-width="3"/>
+      <circle cx="30" cy="30" r="7"/><circle cx="90" cy="30" r="7"/><circle cx="150" cy="30" r="7"/>
+      <circle cx="205" cy="30" r="9" class="head"/>
+    </svg>
+    <small>commit-тер тізбегі, ең соңғысы – релиз</small>
+  </div>
+</section>
+
+<section id="komanda" class="block">
+  <h2>Қатысушылар</h2>
+  <p class="lead">Бұрын бөлек болған қатысушылар беттері енді бір жерде біріктірілді.</p>
+  <div class="people">
+    <article class="person">
+      <div class="ava">М</div>
+      <h3>Молдыр</h3>
+      <p>Дизайн және мазмұн. Басты бетті безендіріп, CHANGELOG жазды.</p>
+    </article>
+    <article class="person alt">
+      <div class="ava">Ә</div>
+      <h3>Сіздің есіміңіз</h3>
+      <p>Git және GitHub. Тегті жасап, релизді жариялады. <em>(index.html ішінде есімді ауыстырыңыз)</em></p>
+    </article>
+  </div>
+</section>
+
+<section id="nuskalar" class="block">
+  <h2>Нұсқалар тарихы</h2>
+  <ol class="timeline">
+    <li>
+      <h3>v1.0.0 <span class="chip">Тұрақты</span></h3>
+      <ul>
+        <li>Басты бет қосылды</li>
+        <li>Қатысушылар беттері біріктірілді</li>
+        <li>CI/CD pipeline іске қосылды</li>
+      </ul>
+    </li>
+  </ol>
+  <div class="semver">
+    <div><b>MAJOR</b><span>Үйлесімсіз өзгерістер</span></div>
+    <div><b>MINOR</b><span>Жаңа мүмкіндіктер</span></div>
+    <div><b>PATCH</b><span>Қателерді түзету</span></div>
+  </div>
+</section>
+
+<section id="pipeline" class="block">
+  <h2>Релиз қалай автоматтандырылады</h2>
+  <p class="lead">GitHub-қа <code>v*</code> түріндегі тег жіберілгенде, workflow өзі іске қосылып, релиз жасайды.</p>
+  <pre><code>git tag v1.0.0
+git push origin v1.0.0</code></pre>
+</section>
+</main>
+
+<footer>Зертханалық жұмыс: Release және Versioning. Командасы: Молдыр және серіктес.</footer>
+</body>
+</html>

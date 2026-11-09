@@ -1,0 +1,32 @@
+name: Релиз жариялау
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Репозиторийді жүктеу
+        uses: actions/checkout@v4
+
+      - name: Сайт файлдарын тексеру
+        run: |
+          test -f index.html
+          test -f style.css
+          echo "Файлдар дұрыс: ${{ github.ref_name }}"
+
+      - name: Мұрағат жасау
+        run: zip -r site-${{ github.ref_name }}.zip index.html style.css CHANGELOG.md
+
+      - name: GitHub Release жасау
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Release ${{ github.ref_name }} – Алғашқы тұрақты нұсқа"
+          body_path: CHANGELOG.md
+          files: site-${{ github.ref_name }}.zip
